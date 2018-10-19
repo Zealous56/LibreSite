@@ -1,0 +1,72 @@
+body {
+    background-color: #19181B;
+    color: #514865;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Give the body the appropriate spacing */
+.container {
+    padding: 1.8em 20%;
+}
+
+/* Give body container appropriate padding and border */
+.container-body {
+    padding: 1em 1.5em;
+    border: solid 0.1em;
+}
+
+.container-body h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Give navbar black background */
+.topnavbar {
+    background-color: #332F3C;
+    overflow: hidden;
+}
+
+/* Style the links inside the navbar */
+.topnavbar a {
+    color: #000;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    padding: 0.6em 0.8em;
+    text-decoration: none;
+}
+
+.topnavbar .topnavbar-left a {
+    float: left;
+}
+
+.topnavbar .topnavbar-right a {
+    float: right;
+}
+
+.topnavbar a:hover {
+    font-weight: bold;
+}
+
+/* Change link color on active */
+.topnavbar a.active {
+    background-color: #463D59;
+}
+
+/* Make the site responsive to small screens */
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 0;
+    }
+
+    .container-body {
+        border: none; 
+    }
+
+    .topnavbar-left a:not(:first-child) {
+        display: none;
+    }
+
+    .topnavbar-right a {
+        display: none;
+    }
+}
