@@ -6,16 +6,35 @@ body {
 
 /* Give the body the appropriate spacing */
 .container {
-    padding: 1.8em 20%;
+    padding: 2em 2em;
 }
 
-/* Give body container appropriate padding and border */
+/* Give main body container appropriate padding and border */
 .container-body {
     padding: 1em 1.5em;
     border: solid 0.1em;
+    border-radius: 1em;
 }
 
+/* Change font of headers */
 .container-body h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+    display: none;
+
+}
+
+/* Give sidebar body container appropriate padding and border */
+.sidebar-body {
+    padding: 1em 1.5em;
+    border: solid 0.1em;
+    border-radius: 1em;
+}
+
+/* Change font of headers */
+.sidebar-body h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -43,6 +62,14 @@ body {
     float: right;
 }
 
+.topnavbar .topnavbar-left a:not(:first-child) {
+    display: none;
+}
+
+.topnavbar .topnavbar-right {
+    display: none;
+}
+
 .topnavbar a:hover {
     font-weight: bold;
 }
@@ -52,21 +79,26 @@ body {
     background-color: #463D59;
 }
 
-/* Make the site responsive to small screens */
-@media screen and (max-width: 576px) {
+/* Show all 3 columns for large screens */
+@media only screen and (min-width: 768px) {
     .container {
-        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-column-gap: 1em;
     }
 
-    .container-body {
-        border: none; 
+    .sidebar {
+        display: block;
     }
+}
 
-    .topnavbar-left a:not(:first-child) {
-        display: none;
+/* Show navbar buttons for large screens */
+@media only screen and (min-width: 576px) {
+    .topnavbar .topnavbar-left a:not(:first-child) {
+        display: block;
     }
-
-    .topnavbar-right a {
-        display: none;
+    
+    .topnavbar .topnavbar-right {
+        display: block;
     }
 }
