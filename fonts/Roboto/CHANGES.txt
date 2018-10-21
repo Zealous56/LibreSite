@@ -1,0 +1,4 @@
+The Apache License requires that any changes made to the original font files be listed.
+The original font files have been modified in the following way:
+
+The font files were converted from the truetype file format to the woff file format. Also, I only included the regular, bold and italic font files and discarded the rest.

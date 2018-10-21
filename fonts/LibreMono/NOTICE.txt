@@ -1,0 +1,3 @@
+The Open Font License requires that the name of the modified font be changed to avoid confusing it with the original font. The exception is if the modified font is in a different format and the original data and metadata is perfectly preserved, or the original data is preserved and the metadata removed entirely.
+
+An online font format converter was used and the data and metadata has not been verified to be the same, so the font has been renamed to LibreMono to avoid violating the license. The name of the original, unmodified font is Share Tech Mono.
