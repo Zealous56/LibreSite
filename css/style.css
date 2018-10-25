@@ -31,7 +31,7 @@ body {
 
 /* Give the body the appropriate spacing */
 .container {
-    padding: 2em 2em;
+    padding: 5em 2em;
 }
 
 /* Give main body container appropriate padding and border */
@@ -48,7 +48,6 @@ body {
 
 .sidebar {
     display: none;
-
 }
 
 /* Give sidebar body container appropriate padding and border */
@@ -67,6 +66,12 @@ body {
 .topnavbar {
     background-color: #332F3C;
     overflow: hidden;
+
+    /* Make topnavbar stick to the top of the page */
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 
 /* Style the links inside the navbar */
@@ -74,7 +79,7 @@ body {
     color: #000;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4em;
+    font-size: 1.5em;
     padding: 0.6em 0.8em;
     text-decoration: none;
 }
