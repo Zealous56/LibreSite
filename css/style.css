@@ -24,26 +24,43 @@
 /* Finish defining fonts */
 
 body {
-    background-color: #19181B;
-    color: #514865;
+    background: url('../res/background.jpg') no-repeat center fixed;
+    background-size: cover;
+    color: #0D00CF;
     font-family: 'LibreMono', monospace;
 }
 
-/* Give the body the appropriate spacing */
+/* Remove the default link styling */
+a, a:hover, a:visited, a:active {
+   color:inherit;
+   text-decoration: none;
+}
+
+/* Give the container the appropriate padding */
 .container {
     padding: 5em 2em;
 }
 
-/* Give main body container appropriate padding and border */
+/* Give container-body appropriate padding and border */
 .container-body {
+	background-color: #ADD8E6;
     padding: 1em 1.5em;
-    border: solid 0.1em;
-    border-radius: 1em;
+    border: double 0.2em;
+}
+
+/* Create padding between posts */
+.container-body .post {
+	padding-bottom: 1em;
 }
 
 /* Change font of headers */
 .container-body h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
+}
+
+.container-body p {
+    color: #000;
+	padding: 0 0.5em;
 }
 
 .sidebar {
@@ -52,9 +69,10 @@ body {
 
 /* Give sidebar body container appropriate padding and border */
 .sidebar-body {
+	background-color: #ADD8E6;
     padding: 1em 1.5em;
-    border: solid 0.1em;
-    border-radius: 1em;
+    border: double 0.2em;
+    text-align: center;
 }
 
 /* Change font of headers */
@@ -62,16 +80,27 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Give navbar black background */
-.topnavbar {
-    background-color: #332F3C;
-    overflow: hidden;
+/* Style list */
+.sidebar-body ul {
+	color: #000;
+	list-style: none;
+	padding-left: 0;
+}
 
-    /* Make topnavbar stick to the top of the page */
+.sidebar-body ul li {
+	padding-bottom: 0.5em;
+	text-decoration: underline;
+}
+/* End styling list */
+
+/* Set navbar style */
+.topnavbar {
+    background-color: #005bcf;
+    overflow: hidden;
     position: fixed;
     width: 100%;
-    left: 0;
-    top: 0;
+	top: 0;
+	left: 0;
 }
 
 /* Style the links inside the navbar */
@@ -108,14 +137,14 @@ body {
 
 /* Change link color on active */
 .topnavbar a.active {
-    background-color: #463D59;
+    background-color: #00c2cf;
 }
 
 /* Show all 3 columns for large screens */
 @media only screen and (min-width: 768px) {
     .container {
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 2.5fr 1fr;
         grid-column-gap: 1em;
     }
 
