@@ -104,6 +104,10 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
 }
 
+.topnavbar-left a:not(:first-child) {
+    display: none;
+}
+
 .topnavbar-right a {
     float: right;
     display: none;
@@ -113,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-.topnavbar-left a:not(:first-child) {
+.dropdown-content {
     display: none;
 }
 
@@ -148,12 +152,11 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
     }
     
-    /* This setting will not effect dropdown */
     .topnavbar-right a {
         display: block;
     }
 
-    .dropdown {
+    #dropbtn {
         display: none;
     }
 }
