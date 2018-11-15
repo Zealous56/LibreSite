@@ -58,17 +58,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ADD8E6;
 }
 
-.post {
+.post, .jumptotop {
 
     /* Padding between posts */
     padding-bottom: 1em;
 }
 
-#jumptotop {
-    text-align: center;
-}
-
-.sidebar-body {
+.sidebar-body, .jumptotop {
     text-align: center;
 }
 
@@ -78,10 +74,10 @@ h1, h2, h3, h4, h5, h6 {
 	padding-left: 0;
 }
 
-.sidebar-body li {
-
+.sidebar-body ul li {
+    
     /* Padding between list elements */
-	padding-bottom: 0.7em;
+	padding-bottom: 1em;
 }
 
 /* Set navbar style */
@@ -99,42 +95,77 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-/* Position topnavbar elements */
 .topnavbar-left a {
     float: left;
 }
 
+.topnavbar-right a {
+    float: right;
+}
+
+/* Hide left text except home */
 .topnavbar-left a:not(:first-child) {
     display: none;
 }
 
-.topnavbar-right a {
-    float: right;
+/* Hide text except for dropdown */
+.topnavbar-right > a {
     display: none;
 }
 
-#dropbtn {
+/* Display dropbtn for small screen */
+.dropbtn {
     display: block;
 }
 
 .dropdown-content {
+
+    /* dropdown-content is relative to topnavbar */
+    position: absolute;
+    top: 3.5em;
+    right: 0;
+    
+    /* Don't display dropdown content by default */
     display: none;
 }
 
-/* Embolden navbar links when hovered over */
+.dropdown-content ul {
+    overflow: hidden;
+    background-color: #00C2Cf;
+
+    /* Add shadow to dropdown box */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    /* Remove default list style */
+    display: table-cell;
+    list-style: none;
+}
+
+.dropdown-content ul li a {
+    width: 100%;
+    text-align: center;
+}
+
+/* Display dropdown content on hover */
+.dropbtn:hover ~ .dropdown-content, .dropdown-content:hover {
+    display: block;
+}
+
+/* Embolden topnavbar links when hovered over */
 .topnavbar a:hover {
     font-weight: bold;
 }
 
 /* Style the footer */
 .footer {
+    overflow: hidden;
     background-color: #005bcf;
     text-align: center;
 }
 
 /* Change link color on active */
 .topnavbar a.active {
-    background-color: #00c2cf;
+    background-color: #00C2Cf;
 }
 
 /* Show all 3 columns for large screens */
@@ -152,11 +183,11 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
     }
     
-    .topnavbar-right a {
+    .topnavbar-right > a {
         display: block;
     }
 
-    #dropbtn {
+    .dropbtn {
         display: none;
     }
 }
