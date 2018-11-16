@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+    head
+        title Site title
+
+        meta(name='keywords', content='site, keywords')
+        meta(name='description', content='Site description')
+        meta(name='author', content='Author name')
+        meta(name='viewport', content="width=device-width, initial-scale=1")
+        meta(charset='utf-8')
+
+        link(rel='stylesheet', type='text/css', href='css/styles.css')
+
+    body
+        .topnavbar
+            .topnavbar-left
+                block topnavbar-links
+            .topnavbar-right
+                .dropdown
+                    a.dropbtn Dropdown
+                    block dropdown-links
+                a(href='#info') Site info
+
+        .spacer &nbsp;
+
+        .container
+            .sidebar
+                block sidebar-body-links
+            .container-body
+                block container-body-posts
+        .footer Footer
