@@ -158,6 +158,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Style the footer */
 .footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     overflow: hidden;
     background-color: #005bcf;
     text-align: center;
