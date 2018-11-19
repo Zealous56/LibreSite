@@ -1,7 +1,7 @@
 const pug = require('pug')
 const fs = require('fs')
 
-const pageList = ['blog', 'contact', 'home', 'info']
+const pageList = ['blog', 'contact', 'index', 'info']
 
 for(let i = 0; i < pageList.length; i++) {
     var page =  pageList[i];
