@@ -1,7 +1,7 @@
 - var lList = ["Home", "Blog", "Contact"]
 - var rList = ["Site Info"]
 
-mixin topnavbar-links-list(activeItem)
+mixin topnavbar-links-list(curPage)
     each item in lList
         if(item == activeItem)
             a(href= item + '.html').active= item
