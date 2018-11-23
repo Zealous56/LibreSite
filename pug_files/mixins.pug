@@ -8,14 +8,15 @@ mixin topnavbar(curPage, list)
 mixin dropdown(curPage)
     .dropdown-content
         ul
+            //- Remove first dropdown button
+            - leftList = leftList.slice(1, leftList.length)
+            
             each item in leftList
-                if(item.text != curPage)
-                    li
-                        a(href= item.ref)= item.text
+                li
+                    a(href= item.ref)= item.text
             each item in rightList
-                if(item.text != curPage)
-                    li
-                        a(href= item.ref)= item.text
+                li
+                    a(href= item.ref)= item.text
 
 mixin sidebar-body(header, links)
     - var hrefIndex = 0;
