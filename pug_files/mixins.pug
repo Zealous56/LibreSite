@@ -1,4 +1,6 @@
 mixin topnavbar(curPage, list)
+
+    //- Print out active and inactive links on topnavbar
     each item in list
         if(item.text == curPage)
             a(href= item.ref).active= item.text
@@ -8,32 +10,45 @@ mixin topnavbar(curPage, list)
 mixin dropdown(curPage)
     .dropdown-content
         ul
-            //- Remove first dropdown button
+            //- Remove first link from dropdown
             - leftList = leftList.slice(1, leftList.length)
             
+            //- Add left topnavbar items to dropdown
             each item in leftList
                 li
                     a(href= item.ref)= item.text
+
+            //- Add right topnavbar items to dropdown
             each item in rightList
                 li
                     a(href= item.ref)= item.text
 
 mixin sidebar-body(header, links)
+
     - var hrefIndex = 0;
     .sidebar-body
+
+        //- Print the header
         h1= header
+
         ul
+
+            //- Print each link found in links array
             each link in links
                 li
                     a(href= '#' + hrefIndex)= link.ref
                 - hrefIndex++
 
 mixin container-body(posts)
+
+    //- Print out posts found in posts array
     - var hrefIndex = 0;
     each post in posts
         .post(id= hrefIndex)
             h1= post.header
             p= post.content
         - hrefIndex++
+
+    //- Add jump to top link
     .jumptotop
         a(href= '#top')= jumpText
