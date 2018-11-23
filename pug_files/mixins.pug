@@ -1,5 +1,5 @@
-mixin topnavbar(curPage)
-    each item in leftList
+mixin topnavbar(curPage, list)
+    each item in list
         if(item.text == curPage)
             a(href= item.ref).active= item.text
         else
@@ -9,6 +9,10 @@ mixin dropdown(curPage)
     .dropdown-content
         ul
             each item in leftList
+                if(item.text != curPage)
+                    li
+                        a(href= item.ref)= item.text
+            each item in rightList
                 if(item.text != curPage)
                     li
                         a(href= item.ref)= item.text
@@ -31,4 +35,4 @@ mixin container-body(posts)
             p= post.content
         - hrefIndex++
     .jumptotop
-        a(href= '#top') Back to top of page
+        a(href= '#top')= jumpText

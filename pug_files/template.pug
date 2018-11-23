@@ -15,12 +15,12 @@ html(lang= language)
     body
         .topnavbar
             .topnavbar-left
-                block topnavbar
+                block topnavbar-left
             .topnavbar-right
                 .dropdown
-                    a.dropbtn Dropdown
+                    a.dropbtn= dropdown
                     block dropdown
-                a(href='info.html') Site info
+                block topnavbar-right
 
         .spacer &nbsp;
 
@@ -34,4 +34,4 @@ html(lang= language)
 
         .spacer &nbsp;
 
-        .footer Footer
+        .footer= footer

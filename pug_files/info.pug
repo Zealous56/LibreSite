@@ -1,7 +1,10 @@
 extends layout.pug
 
-block topnavbar
-    +topnavbar('Info')
+block topnavbar-left
+    +topnavbar('Info', leftList)
+
+block topnavbar-right
+    +topnavbar('Info', rightList)
 
 block dropdown
     +dropdown('Info')
