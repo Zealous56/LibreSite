@@ -1,0 +1,37 @@
+doctype html
+html(lang= language)
+    head
+        //- User configurable variables
+        title= title
+        meta(name='keywords', content= keywords)
+        meta(name='description', content= description)
+        meta(name='author', content=author)
+
+        //- Constants
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', type='text/css', href='css/styles.css')
+
+    body
+        .topnavbar
+            .topnavbar-left
+                block topnavbar-left
+            .topnavbar-right
+                .dropdown
+                    a.dropbtn= dropdown
+                    block dropdown
+                block topnavbar-right
+
+        .spacer &nbsp;
+
+        .container
+            .sidebar
+                block sidebar-body-left
+            .container-body
+                block container-body
+            .sidebar
+                block sidebar-body-right
+
+        .spacer &nbsp;
+
+        .footer= footer

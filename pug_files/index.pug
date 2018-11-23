@@ -1,13 +1,27 @@
 extends layout.pug
 
 block topnavbar-left
-    +topnavbar('Contact', leftList)
+    +topnavbar('Home', leftList)
 
 block topnavbar-right
-    +topnavbar('Contact', rightList)
+    +topnavbar('Home', rightList)
 
 block dropdown
-    +dropdown('Contact')
+    +dropdown('Home')
+
+block sidebar-body-left
+    +sidebar-body('Table of Contents', [
+        { ref: 'First post' },
+        { ref: 'Second post' },
+        { ref: 'Third post' },
+        { ref: 'Fourth post' },
+        { ref: 'Fifth post' },
+        { ref: 'Sixth post' },
+        { ref: 'Seventh post' },
+        { ref: 'Eighth post' },
+        { ref: 'Ninth post' },
+        { ref: 'Tenth post' }
+    ])
 
 
 block container-body
@@ -22,18 +36,4 @@ block container-body
         { header: 'Eighth post', content: 'Here is some more text for you' },
         { header: 'Ninth post', content: 'Here is some more text for you' },
         { header: 'Tenth post', content: 'Here is some more text for you' }
-    ])
-
-block sidebar-body-right
-    +sidebar-body('Table of Contents', [
-        { ref: 'First' },
-        { ref: 'Second' },
-        { ref: 'Third' },
-        { ref: 'Fourth' },
-        { ref: 'Fifth' },
-        { ref: 'Sixth' },
-        { ref: 'Seventh' },
-        { ref: 'Eighth' },
-        { ref: 'Ninth' },
-        { ref: 'Tenth' }
     ])

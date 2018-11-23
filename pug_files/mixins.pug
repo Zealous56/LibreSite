@@ -1,0 +1,39 @@
+mixin topnavbar(curPage, list)
+    each item in list
+        if(item.text == curPage)
+            a(href= item.ref).active= item.text
+        else
+            a(href= item.ref)= item.text
+
+mixin dropdown(curPage)
+    .dropdown-content
+        ul
+            //- Remove first dropdown button
+            - leftList = leftList.slice(1, leftList.length)
+            
+            each item in leftList
+                li
+                    a(href= item.ref)= item.text
+            each item in rightList
+                li
+                    a(href= item.ref)= item.text
+
+mixin sidebar-body(header, links)
+    - var hrefIndex = 0;
+    .sidebar-body
+        h1= header
+        ul
+            each link in links
+                li
+                    a(href= '#' + hrefIndex)= link.ref
+                - hrefIndex++
+
+mixin container-body(posts)
+    - var hrefIndex = 0;
+    each post in posts
+        .post(id= hrefIndex)
+            h1= post.header
+            p= post.content
+        - hrefIndex++
+    .jumptotop
+        a(href= '#top')= jumpText

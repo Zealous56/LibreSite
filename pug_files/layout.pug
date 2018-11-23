@@ -1,84 +1,38 @@
-- var lList = ["Home", "Blog", "Contact"]
-- var rList = ["Site Info"]
+- var title= 'Site title'
+- var description= 'Site description'
+- var author= 'Author name'
+- var keywords= 'site, keywords'
+- var language= 'en-US'
 
-mixin topnavbar-links-list(activeItem)
-    each item in lList
-        if(item == activeItem)
-            a(href= item + '.html').active= item
-        else
-            a(href= item + '.html')= item
+- var dropdown= 'Dropdown'
+- var footer = 'Footer'
+- var jumpText = 'Back to top of page'
 
-mixin dropdown-links-list(curPage)
-    .dropdown-content
-        ul
-            each item in lList
-                if(item != curPage)
-                    li
-                        a(href= item + '.html')= item
-            each item in rList
-                li
-                    a= item
+//- Left topnavbar links
+-
+    var leftList = [
+        {
+            text: 'Home',
+            ref: 'index.html'
+        },
+        {
+            text: 'Blog',
+            ref: 'blog.html'
+        },
+        {
+            text: 'Contact',
+            ref: 'contact.html'
+        }
+    ]
 
-mixin sidebar-body-links-list(header, links)
-    .sidebar-body
-        h1= header
-        ul
-            each link in links
-                li
-                    a(href= '#' + link.post)= link.ref
+//- Right topnavbar links
+-
+    var rightList = [
+        {
+            text: 'Site Info',
+            ref: 'info.html'
+        }
+    ]
 
-mixin container-body-posts-list(posts)
-    each post in posts
-        .post(id= post.id)
-            h1= post.header
-            p= post.content
-    .jumptotop
-        a(href= '#top') Back to top of page
-
-doctype html
-html(lang='en')
-    head
-        title Site title
-
-        meta(name='keywords', content='site, keywords')
-        meta(name='description', content='Site description')
-        meta(name='author', content='Author name')
-        meta(name='viewport', content="width=device-width, initial-scale=1")
-        meta(charset='utf-8')
-
-        link(rel='stylesheet', type='text/css', href='css/styles.css')
-
-    body
-        .topnavbar
-            .topnavbar-left
-                block topnavbar-links
-                    a No content loaded
-            .topnavbar-right
-                .dropdown
-                    a.dropbtn Dropdown
-                    block dropdown-links
-                        .dropdown-content
-                            ul
-                                li
-                                    a No content loaded
-                a(href='info.html') Site info
-
-        .spacer &nbsp;
-
-        .container
-            .sidebar
-                block sidebar-body-links
-                    .sidebar-body
-                        h1 No content loaded
-                        ul
-                            li
-                                a No content loaded
-            .container-body
-                block container-body-posts
-                    .post
-                        h1 No content loaded
-                        a No content loaded
-
-        .spacer &nbsp;
-
-        .footer Footer
+include mixins.pug
+include template.pug

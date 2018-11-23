@@ -1,5 +1,14 @@
-const pug = require('pug');
+const pug = require('pug')
+const fs = require('fs')
 
-// Compile the source code
-const compiledFunction = pug.compileFile('pug_files/home.pug');
-console.log(compiledFunction());
+const pageList = ['blog', 'contact', 'index', 'info']
+
+for(var i = 0; i < pageList.length; i++) {
+    let page = pageList[i];
+    var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
+
+    fs.writeFile(page + '.html', compiledFunction(), (err) => {
+        if(err) console.log(err)
+        else console.log('Compilation of ' + page + ' successful!')
+    })
+}
