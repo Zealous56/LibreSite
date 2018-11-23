@@ -1,37 +1,47 @@
 - var lList = ["Home", "Blog", "Contact"]
-- var rList = ["Site Info"]
 
 mixin topnavbar-links-list(curPage)
     each item in lList
-        if(item == activeItem)
-            a(href= item + '.html').active= item
+        - var itemLowercase = item.toLowerCase()
+        if(item == curPage)
+            if(item == lList[0])
+                a(href= 'index.html').active= item
+            else
+                a(href= itemLowercase + '.html').active= item
         else
-            a(href= item + '.html')= item
+            if(item == lList[0])
+                a(href= 'index.html')= item
+            else
+                a(href= itemLowercase + '.html')= item
 
 mixin dropdown-links-list(curPage)
     .dropdown-content
         ul
             each item in lList
+                - var itemLowercase = item.toLowerCase()
                 if(item != curPage)
                     li
-                        a(href= item + '.html')= item
-            each item in rList
-                li
-                    a= item
+                        a(href= itemLowercase + '.html')= item
+            li
+                a(href= 'info.html')= 'Site Info'
 
 mixin sidebar-body-links-list(header, links)
+    - var hrefIndex = 0;
     .sidebar-body
         h1= header
         ul
             each link in links
                 li
-                    a(href= '#' + link.post)= link.ref
+                    a(href= '#' + hrefIndex)= link.ref
+                - hrefIndex++
 
 mixin container-body-posts-list(posts)
+    - var hrefIndex = 0;
     each post in posts
-        .post(id= post.id)
+        .post(id= hrefIndex)
             h1= post.header
             p= post.content
+        - hrefIndex++
     .jumptotop
         a(href= '#top') Back to top of page
 
@@ -52,32 +62,21 @@ html(lang='en')
         .topnavbar
             .topnavbar-left
                 block topnavbar-links
-                    a No content loaded
             .topnavbar-right
                 .dropdown
                     a.dropbtn Dropdown
                     block dropdown-links
-                        .dropdown-content
-                            ul
-                                li
-                                    a No content loaded
                 a(href='info.html') Site info
 
         .spacer &nbsp;
 
         .container
             .sidebar
-                block sidebar-body-links
-                    .sidebar-body
-                        h1 No content loaded
-                        ul
-                            li
-                                a No content loaded
+                block sidebar-body-left-links
             .container-body
                 block container-body-posts
-                    .post
-                        h1 No content loaded
-                        a No content loaded
+            .sidebar
+                block sidebar-body-right-links
 
         .spacer &nbsp;
 

@@ -1,1 +1,21 @@
 extends layout.pug
+
+block topnavbar-links
+    +topnavbar-links-list('Info')
+
+block dropdown-links
+    +dropdown-links-list('Info')
+
+block sidebar-body-right-links
+    +sidebar-body-links-list('Table of Contents', [
+        { ref: 'First' },
+        { ref: 'Second' },
+        { ref: 'Third' },
+        { ref: 'Fourth' },
+        { ref: 'Fifth' },
+        { ref: 'Sixth' },
+        { ref: 'Seventh' },
+        { ref: 'Eighth' },
+        { ref: 'Ninth' },
+        { ref: 'Tenth' }
+    ])

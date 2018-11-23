@@ -1,1 +1,50 @@
 extends layout.pug
+
+block topnavbar-links
+    +topnavbar-links-list('Contact')
+
+block dropdown-links
+    +dropdown-links-list('Contact')
+
+block sidebar-body-left-links
+    +sidebar-body-links-list('Table of Contents', [
+        { ref: 'First post' },
+        { ref: 'Second post' },
+        { ref: 'Third post' },
+        { ref: 'Fourth post' },
+        { ref: 'Fifth post' },
+        { ref: 'Sixth post' },
+        { ref: 'Seventh post' },
+        { ref: 'Eighth post' },
+        { ref: 'Ninth post' },
+        { ref: 'Tenth post' }
+    ])
+
+
+block container-body-posts
+    +container-body-posts-list([
+        { header: 'First post', content: 'Here is some more text for you' },
+        { header: 'Second post', content: 'Here is some more text for you' },
+        { header: 'Third post', content: 'Here is some more text for you' },
+        { header: 'Fourth post', content: 'Here is some more text for you' },
+        { header: 'Fifth post', content: 'Here is some more text for you' },
+        { header: 'Sixth post', content: 'Here is some more text for you' },
+        { header: 'Seventh post', content: 'Here is some more text for you' },
+        { header: 'Eighth post', content: 'Here is some more text for you' },
+        { header: 'Ninth post', content: 'Here is some more text for you' },
+        { header: 'Tenth post', content: 'Here is some more text for you' }
+    ])
+
+block sidebar-body-right-links
+    +sidebar-body-links-list('Table of Contents', [
+        { ref: 'First' },
+        { ref: 'Second' },
+        { ref: 'Third' },
+        { ref: 'Fourth' },
+        { ref: 'Fifth' },
+        { ref: 'Sixth' },
+        { ref: 'Seventh' },
+        { ref: 'Eighth' },
+        { ref: 'Ninth' },
+        { ref: 'Tenth' }
+    ])
