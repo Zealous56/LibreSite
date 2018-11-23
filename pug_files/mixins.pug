@@ -1,29 +1,23 @@
-mixin topnavbar-links-list(curPage)
+mixin topnavbar(curPage)
+    - var index = 0
     each item in lList
-        - var itemLowercase = item.toLowerCase()
         if(item == curPage)
-            if(item == lList[0])
-                a(href= 'index.html').active= item
-            else
-                a(href= itemLowercase + '.html').active= item
+            a(href= lListFilenames[index]).active= item
         else
-            if(item == lList[0])
-                a(href= 'index.html')= item
-            else
-                a(href= itemLowercase + '.html')= item
+            a(href= lListFilenames[index])= item
+        - index++
 
-mixin dropdown-links-list(curPage)
+mixin dropdown(curPage)
     .dropdown-content
         ul
+            - var index = 0
             each item in lList
-                - var itemLowercase = item.toLowerCase()
                 if(item != curPage)
                     li
-                        a(href= itemLowercase + '.html')= item
-            li
-                a(href= 'info.html')= 'Site Info'
+                        a(href= lListFilenames[index])= item
+                - index++
 
-mixin sidebar-body-links-list(header, links)
+mixin sidebar-body(header, links)
     - var hrefIndex = 0;
     .sidebar-body
         h1= header
@@ -33,7 +27,7 @@ mixin sidebar-body-links-list(header, links)
                     a(href= '#' + hrefIndex)= link.ref
                 - hrefIndex++
 
-mixin container-body-posts-list(posts)
+mixin container-body(posts)
     - var hrefIndex = 0;
     each post in posts
         .post(id= hrefIndex)

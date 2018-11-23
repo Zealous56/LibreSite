@@ -1,13 +1,13 @@
 extends layout.pug
 
-block topnavbar-links
-    +topnavbar-links-list('Contact')
+block topnavbar
+    +topnavbar('Contact')
 
-block dropdown-links
-    +dropdown-links-list('Contact')
+block dropdown
+    +dropdown('Contact')
 
-block sidebar-body-left-links
-    +sidebar-body-links-list('Table of Contents', [
+block sidebar-body-left
+    +sidebar-body('Table of Contents', [
         { ref: 'First post' },
         { ref: 'Second post' },
         { ref: 'Third post' },
@@ -21,8 +21,8 @@ block sidebar-body-left-links
     ])
 
 
-block container-body-posts
-    +container-body-posts-list([
+block container-body
+    +container-body([
         { header: 'First post', content: 'Here is some more text for you' },
         { header: 'Second post', content: 'Here is some more text for you' },
         { header: 'Third post', content: 'Here is some more text for you' },
@@ -35,8 +35,8 @@ block container-body-posts
         { header: 'Tenth post', content: 'Here is some more text for you' }
     ])
 
-block sidebar-body-right-links
-    +sidebar-body-links-list('Table of Contents', [
+block sidebar-body-right
+    +sidebar-body('Table of Contents', [
         { ref: 'First' },
         { ref: 'Second' },
         { ref: 'Third' },

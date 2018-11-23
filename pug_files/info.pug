@@ -1,13 +1,13 @@
 extends layout.pug
 
-block topnavbar-links
-    +topnavbar-links-list('Info')
+block topnavbar
+    +topnavbar('Info')
 
-block dropdown-links
-    +dropdown-links-list('Info')
+block dropdown
+    +dropdown('Info')
 
-block sidebar-body-right-links
-    +sidebar-body-links-list('Table of Contents', [
+block sidebar-body-right
+    +sidebar-body('Table of Contents', [
         { ref: 'First' },
         { ref: 'Second' },
         { ref: 'Third' },
