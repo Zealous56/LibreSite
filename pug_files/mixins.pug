@@ -1,0 +1,44 @@
+mixin topnavbar-links-list(curPage)
+    each item in lList
+        - var itemLowercase = item.toLowerCase()
+        if(item == curPage)
+            if(item == lList[0])
+                a(href= 'index.html').active= item
+            else
+                a(href= itemLowercase + '.html').active= item
+        else
+            if(item == lList[0])
+                a(href= 'index.html')= item
+            else
+                a(href= itemLowercase + '.html')= item
+
+mixin dropdown-links-list(curPage)
+    .dropdown-content
+        ul
+            each item in lList
+                - var itemLowercase = item.toLowerCase()
+                if(item != curPage)
+                    li
+                        a(href= itemLowercase + '.html')= item
+            li
+                a(href= 'info.html')= 'Site Info'
+
+mixin sidebar-body-links-list(header, links)
+    - var hrefIndex = 0;
+    .sidebar-body
+        h1= header
+        ul
+            each link in links
+                li
+                    a(href= '#' + hrefIndex)= link.ref
+                - hrefIndex++
+
+mixin container-body-posts-list(posts)
+    - var hrefIndex = 0;
+    each post in posts
+        .post(id= hrefIndex)
+            h1= post.header
+            p= post.content
+        - hrefIndex++
+    .jumptotop
+        a(href= '#top') Back to top of page
