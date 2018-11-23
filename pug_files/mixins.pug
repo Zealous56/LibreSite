@@ -1,21 +1,17 @@
 mixin topnavbar(curPage)
-    - var index = 0
-    each item in lList
-        if(item == curPage)
-            a(href= lListFilenames[index]).active= item
+    each item in leftList
+        if(item.text == curPage)
+            a(href= item.ref).active= item.text
         else
-            a(href= lListFilenames[index])= item
-        - index++
+            a(href= item.ref)= item.text
 
 mixin dropdown(curPage)
     .dropdown-content
         ul
-            - var index = 0
-            each item in lList
-                if(item != curPage)
+            each item in leftList
+                if(item.text != curPage)
                     li
-                        a(href= lListFilenames[index])= item
-                - index++
+                        a(href= item.ref)= item.text
 
 mixin sidebar-body(header, links)
     - var hrefIndex = 0;

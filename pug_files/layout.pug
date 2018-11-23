@@ -5,14 +5,30 @@
 - var language= 'en-US'
 
 //- This is for the left topnavbar links
-//- Home points to index.html, Blog points to blog.html, etc.
-- var lList = ['Home', 'Blog', 'Contact']
-- var lListFilenames = ['index.html', 'blog.html', 'contact.html']
+-
+    var leftList = [
+        {
+            text: 'Home',
+            ref: 'index.html'
+        },
+        {
+            text: 'Blog',
+            ref: 'blog.html'
+        },
+        {
+            text: 'Contact',
+            ref: 'contact.html'
+        }
+    ]
 
 //- This is for the right topnavbar links
-//- Site Info points to info.html
-- var rList = ['Site Info']
-- var rListFilenames = ['info.html']
+-
+    var rightList = [
+        {
+            text: 'Site Info',
+            ref: 'info.html'
+        }
+    ]
 
 include mixins.pug
 include template.pug
