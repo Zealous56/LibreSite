@@ -1,4 +1,9 @@
-- var lList = ["Home", "Blog", "Contact"]
+- var title= 'Site title'
+- var description= 'Site description'
+- var author= 'Author name'
+- var keywords= 'site, keywords'
+- var language= 'en-US'
+- var lList = ['Home', 'Blog', 'Contact']
 
 mixin topnavbar-links-list(curPage)
     each item in lList
@@ -45,39 +50,4 @@ mixin container-body-posts-list(posts)
     .jumptotop
         a(href= '#top') Back to top of page
 
-doctype html
-html(lang='en-US')
-    head
-        title Site title
-
-        meta(name='keywords', content='site, keywords')
-        meta(name='description', content='Site description')
-        meta(name='author', content='Author name')
-        meta(name='viewport', content="width=device-width, initial-scale=1")
-        meta(charset='utf-8')
-
-        link(rel='stylesheet', type='text/css', href='css/styles.css')
-
-    body
-        .topnavbar
-            .topnavbar-left
-                block topnavbar-links
-            .topnavbar-right
-                .dropdown
-                    a.dropbtn Dropdown
-                    block dropdown-links
-                a(href='info.html') Site info
-
-        .spacer &nbsp;
-
-        .container
-            .sidebar
-                block sidebar-body-left-links
-            .container-body
-                block container-body-posts
-            .sidebar
-                block sidebar-body-right-links
-
-        .spacer &nbsp;
-
-        .footer Footer
+include template.pug
