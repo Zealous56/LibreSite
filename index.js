@@ -4,19 +4,18 @@ const fs = require('fs')
 const contentPath = 'content'
 const pageList = ['blog', 'contact', 'index', 'info']
 
-var leftSidebarContent;
-var containerContent;
-var rightSidebarContent;
-
 /* Iterate through pageList array */
 for(let i = 0; i < pageList.length; i++) {
     let path = contentPath + '/' + pageList[i]
 
-    /* Iterate through all directories in contentPath */
     fs.readdir(path, (err, files) => {
         if(err) {
             console.log('Could not read directory ' + path)
         } else {
+
+            var leftSidebar = []
+            var container = []
+            var rightSidebar = []
 
             /* Iterate through all files in path */
             files.forEach( (file) => {
@@ -38,6 +37,33 @@ for(let i = 0; i < pageList.length; i++) {
                         /* Parse content from text file (content is everything else) */
                         var content = rawText.replace(header + '\n\n', '')
 
+                        /* Push data into corresponding array */
+                        switch(location) {
+                        case 'sidebar-left':
+                            leftSidebar.push(
+                                {
+                                    date: date,
+                                    header: header,
+                                    content: content
+                                }
+                            )
+                        case 'container':
+                            container.push(
+                                {
+                                    date: date,
+                                    header: header,
+                                    content: content
+                                }
+                            )
+                        case 'sidebar-right':
+                            rightSidebar.push(
+                                {
+                                    date: date,
+                                    header: header,
+                                    content: content
+                                }
+                            )
+                        }
                         console.log('Successfully parsed file ' + path + '/' + file)
                     }
                 })
@@ -55,7 +81,10 @@ for(var i = 0; i < pageList.length; i++) {
 
     /* Write compiled page to a file */
     fs.writeFile(page + '.html', compiledFunction(), (err) => {
-        if(err) console.log(err)
-        else console.log('Compilation of ' + page + ' successful!')
+        if(err) {
+            console.log(err)
+        } else {
+            console.log('Compilation of ' + page + ' successful!')
+        }
     })
 }
