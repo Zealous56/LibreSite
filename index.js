@@ -25,11 +25,6 @@ for(let i = 0; i < pageList.length; i++) {
             /* Read file */
             var rawText = fs.readFileSync(path + '/' + file).toString()
 
-            if(err) {
-                console.log('Could not parse file ' + file)
-                return;
-            }
-
             /* Parse location and date for file (separated by underscore) */
             var fileName = file.split('_')
             var location = fileName[0]
