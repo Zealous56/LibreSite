@@ -39,9 +39,9 @@ for(let i = 0; i < pageList.length; i++) {
         var rawText = fs.readFileSync(path + '/' + file).toString()
 
         /* Parse location and date for file (separated by underscore) */
-        var fileName = file.replace('.txt', '').split('_')
-        var date = fileName[0]
-        var location = fileName[1]
+        var fileNames = file.replace('.txt', '').split('_')
+        var date = fileNames[0]
+        var location = fileNames[1]
 
         /* Parse header from text file (header is first line) */
         var header = rawText.split('\n', 1)[0]
