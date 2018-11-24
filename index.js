@@ -6,13 +6,15 @@ const pageList = ['blog', 'contact', 'index', 'info']
 
 /* Iterate through pageList array */
 for(let i = 0; i < pageList.length; i++) {
-    let path = contentPath + '/' + pageList[i]
+    let page = pageList[i];
+    let path = contentPath + '/' + page
 
     fs.readdir(path, (err, files) => {
         if(err) {
             console.log('Could not read directory ' + path)
         } else {
 
+            /* Create arrays to store objects containing file contents */
             var leftSidebar = []
             var container = []
             var rightSidebar = []
@@ -70,12 +72,7 @@ for(let i = 0; i < pageList.length; i++) {
             })
         }
     })
-}
-
-/* Iterate through all pages */
-for(var i = 0; i < pageList.length; i++) {
-    let page = pageList[i];
-
+    
     /* Compile each page  */
     var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
 
