@@ -23,52 +23,52 @@ for(let i = 0; i < pageList.length; i++) {
         files.forEach( (file) => {
 
             /* Read file */
-            fs.readFile(path + '/' + file, 'utf8', (err, rawText) => {
-                if(err) {
-                    console.log('Could not parse file ' + file)
-                    return;
-                }
+            var rawText = fs.readFileSync(path + '/' + file).toString()
 
-                /* Parse location and date for file (separated by underscore) */
-                var fileName = file.split('_')
-                var location = fileName[0]
-                var date = fileName[1].replace('.txt', '')
+            if(err) {
+                console.log('Could not parse file ' + file)
+                return;
+            }
 
-                /* Parse header from text file (header is first line) */
-                var header = rawText.split('\n', 1)[0]
+            /* Parse location and date for file (separated by underscore) */
+            var fileName = file.split('_')
+            var location = fileName[0]
+            var date = fileName[1].replace('.txt', '')
 
-                /* Parse content from text file (content is everything else) */
-                var content = rawText.replace(header + '\n\n', '')
+            /* Parse header from text file (header is first line) */
+            var header = rawText.split('\n', 1)[0]
 
-                /* Push data into corresponding array */
-                switch(location) {
-                case 'sidebar-left':
-                    leftSidebar.push(
-                        {
-                            date: date,
-                            header: header,
-                            content: content
-                        }
-                    )
-                case 'container':
-                    container.push(
-                        {
-                            date: date,
-                            header: header,
-                            content: content
-                        }
-                    )
-                case 'sidebar-right':
-                    rightSidebar.push(
-                        {
-                            date: date,
-                            header: header,
-                            content: content
-                        }
-                    )
-                }
-                console.log('Successfully parsed file ' + path + '/' + file)
-            })
+            /* Parse content from text file (content is everything else) */
+            var content = rawText.replace(header + '\n\n', '')
+
+            /* Push data into corresponding array */
+            switch(location) {
+            case 'sidebar-left':
+                leftSidebar.push(
+                    {
+                        date: date,
+                        header: header,
+                        content: content
+                    }
+                )
+            case 'container':
+                container.push(
+                    {
+                        date: date,
+                        header: header,
+                        content: content
+                    }
+                )
+            case 'sidebar-right':
+                rightSidebar.push(
+                    {
+                        date: date,
+                        header: header,
+                        content: content
+                    }
+                )
+            }
+            console.log('Successfully parsed file ' + path + '/' + file)
         })
     })
     
