@@ -72,6 +72,16 @@ for(let i = 0; i < pageList.length; i++) {
 
         console.log('Successfully parsed file ' + path + '/' + file)
     })
+
+    /* Write sorting function */
+    function compare(a, b) {
+        return b.date.localeCompare(a.date)
+    }
+
+    /* Sort data in arrays */
+    leftSidebar.sort(compare)
+    container.sort(compare)
+    rightSidebar.sort(compare)
     
     /* Compile each page to a file  */
     var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
