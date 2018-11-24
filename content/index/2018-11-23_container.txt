@@ -1,7 +1,3 @@
-Header of my post
+My header
 
-The rest of this
-content
-is not the
-header. It is the content
-of the post
+This is my simple content
