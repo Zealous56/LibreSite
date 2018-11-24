@@ -1,13 +1,28 @@
 const pug = require('pug')
 const fs = require('fs')
 
-const contentPath = 'content'
-const pageList = ['blog', 'contact', 'index', 'info']
+const pugFilesPath = 'pug_files/'
+const contentPath = 'content/'
+const pugFilesIgnore = ['layout.pug', 'mixins.pug', 'template.pug']
+
+/* Get all files from pug files directory */
+var pageList = fs.readdirSync(pugFilesPath)
+
+/* Remove ignored pug files from pageList */
+for(var i = 0; i < pugFilesIgnore.length; i++) {
+    var spliceMe = pageList.indexOf(pugFilesIgnore[i])
+    pageList.splice(spliceMe, 1)
+}
+
+/* Remove .pug extension from pageList elements */
+for(var i = 0; i < pageList.length; i++) {
+    pageList[i] = pageList[i].split('.pug', 1)[0]
+}
 
 /* Iterate through pageList array */
 for(let i = 0; i < pageList.length; i++) {
     let page = pageList[i];
-    let path = contentPath + '/' + page
+    let path = contentPath + page
 
     /* Read all files in directory into an array */
     var files = fs.readdirSync(path)
