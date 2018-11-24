@@ -9,6 +9,7 @@ for(let i = 0; i < pageList.length; i++) {
     let page = pageList[i];
     let path = contentPath + '/' + page
 
+    /* Read all files in directory into an array */
     var files = fs.readdirSync(path)
 
     /* Create arrays to store objects containing file contents */
@@ -33,34 +34,28 @@ for(let i = 0; i < pageList.length; i++) {
         /* Parse content from text file (content is everything else) */
         var content = rawText.replace(header + '\n\n', '')
 
+        /* Define function for pushing data */
+        function pushContent(location) {
+            location.push(
+                {
+                    date: date,
+                    header: header,
+                    content: content
+                }
+            )
+        }
+
         /* Push data into corresponding array */
         switch(location) {
         case 'sidebar-left':
-            leftSidebar.push(
-                {
-                    date: date,
-                    header: header,
-                    content: content
-                }
-            )
+            pushContent(leftSidebar)
         case 'container':
-            container.push(
-                {
-                    date: date,
-                    header: header,
-                    content: content
-                }
-            )
+            pushContent(container)
         case 'sidebar-right':
-            rightSidebar.push(
-                {
-                    date: date,
-                    header: header,
-                    content: content
-                }
-            )
-            console.log('Successfully parsed file ' + path + '/' + file)
+            pushContent(rightSidebar)
         }
+
+        console.log('Successfully parsed file ' + path + '/' + file)
     })
     
     /* Compile each page to a file  */
