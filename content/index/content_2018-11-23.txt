@@ -1,0 +1,7 @@
+Header of my post
+
+The rest of this
+content
+is not the
+header. It is the content
+of the post
