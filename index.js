@@ -38,10 +38,8 @@ for(let i = 0; i < pageList.length; i++) {
         /* Read file */
         var rawText = fs.readFileSync(path + '/' + file).toString()
 
-        /* Parse location and date for file (separated by underscore) */
-        var fileNames = file.replace('.txt', '').split('_')
-        var date = fileNames[0]
-        var location = fileNames[1]
+        /* Parse date for file */
+        var date = file.replace('.txt', '')
 
         /* Parse header from text file (header is first line) */
         var header = rawText.split('\n', 1)[0]
@@ -60,15 +58,8 @@ for(let i = 0; i < pageList.length; i++) {
             )
         }
 
-        /* Push data into corresponding array */
-        switch(location) {
-        case 'sidebar-left':
-            pushContent(leftSidebar)
-        case 'container':
-            pushContent(container)
-        case 'sidebar-right':
-            pushContent(rightSidebar)
-        }
+        /* Push data into container */
+        pushContent(container)
 
         console.log('Successfully parsed file ' + path + '/' + file)
     })
