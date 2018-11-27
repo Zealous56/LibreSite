@@ -43,7 +43,7 @@ mixin container-body(posts)
 
     //- Print out posts found in posts array
     - var hrefIndex = 0;
-    each post in posts
+    each post in container
         .post(id= hrefIndex)
             h1= post.header
             p= post.content

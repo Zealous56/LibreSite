@@ -85,7 +85,7 @@ for(let i = 0; i < pageList.length; i++) {
     
     /* Compile each page to a file  */
     var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
-    fs.writeFileSync(page + '.html', compiledFunction())
+    fs.writeFileSync(page + '.html', compiledFunction({ container }))
     
     console.log('Compilation of ' + page + ' successful!')
 }
