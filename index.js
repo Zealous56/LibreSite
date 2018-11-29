@@ -28,9 +28,8 @@ for(let i = 0; i < pageList.length; i++) {
     var files = fs.readdirSync(path)
 
     /* Create arrays to store objects containing file contents */
-    var leftSidebar = []
+    var sidebarTitle
     var container = []
-    var rightSidebar = []
 
     /* Iterate through all files in path */
     files.forEach( (file) => {
@@ -41,25 +40,30 @@ for(let i = 0; i < pageList.length; i++) {
         /* Parse date for file */
         var date = file.replace('.txt', '')
 
-        /* Parse header from text file (header is first line) */
-        var header = rawText.split('\n', 1)[0]
+        /* Check if text file specifies sidebar header */
+        if(date == 'sidebar-title') {
+            sidebarTitle = rawText
+        } else {
+            /* Parse header from text file (header is first line) */
+            var header = rawText.split('\n', 1)[0]
 
-        /* Parse content from text file (content is everything else) */
-        var content = rawText.replace(header + '\n\n', '')
+            /* Parse content from text file (content is everything else) */
+            var content = rawText.replace(header + '\n\n', '')
 
-        /* Define function for pushing data */
-        function pushContent(location) {
-            location.push(
-                {
-                    date: date,
-                    header: header,
-                    content: content
-                }
-            )
+            /* Define function for pushing data */
+            function pushContent(container) {
+                container.push(
+                    {
+                        date: date,
+                        header: header,
+                        content: content
+                    }
+                )
+            }
+
+            /* Push data into container */
+            pushContent(container)
         }
-
-        /* Push data into container */
-        pushContent(container)
 
         console.log('Successfully parsed file ' + path + '/' + file)
     })
@@ -70,13 +74,11 @@ for(let i = 0; i < pageList.length; i++) {
     }
 
     /* Sort data in arrays */
-    leftSidebar.sort(compare)
     container.sort(compare)
-    rightSidebar.sort(compare)
     
     /* Compile each page to a file  */
     var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
-    fs.writeFileSync(page + '.html', compiledFunction({ container }))
+    fs.writeFileSync(page + '.html', compiledFunction({ container, sidebarTitle }))
     
     console.log('Compilation of ' + page + ' successful!')
 }

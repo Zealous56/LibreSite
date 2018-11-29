@@ -23,25 +23,25 @@ mixin dropdown(curPage)
                 li
                     a(href= item.ref)= item.text
 
-mixin sidebar-body(header, links)
+mixin sidebar-body(sidebarTitle)
 
     - var hrefIndex = 0;
     .sidebar-body
 
         //- Print the header
-        h1= header
+        h1= sidebarTitle
 
         ul
 
             //- Print each link found in links array
-            each link in links
+            each link in container
                 li
-                    a(href= '#' + hrefIndex)= link.ref
+                    a(href= '#' + hrefIndex)= link.header
                 - hrefIndex++
 
-mixin container-body(posts)
+mixin container-body()
 
-    //- Print out posts found in posts array
+    //- Print out posts found in container array
     - var hrefIndex = 0;
     each post in container
         .post(id= hrefIndex)

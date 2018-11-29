@@ -9,16 +9,8 @@ block topnavbar-right
 block dropdown
     +dropdown('Site Info')
 
-block sidebar-body-right
-    +sidebar-body('Table of Contents', [
-        { ref: 'First' },
-        { ref: 'Second' },
-        { ref: 'Third' },
-        { ref: 'Fourth' },
-        { ref: 'Fifth' },
-        { ref: 'Sixth' },
-        { ref: 'Seventh' },
-        { ref: 'Eighth' },
-        { ref: 'Ninth' },
-        { ref: 'Tenth' }
-    ])
+block sidebar-body-left
+    +sidebar-body('Table of Contents')
+
+block container-body
+    +container-body()
