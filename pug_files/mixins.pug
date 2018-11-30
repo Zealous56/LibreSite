@@ -48,7 +48,7 @@ mixin container-body()
     each post in container
         .post(id= hrefIndex)
             h1= post.header
-            p= post.content
+            p!= post.content
         - hrefIndex++
 
     //- Add jump to top link
