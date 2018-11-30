@@ -1,10 +1,11 @@
-extends layout.pug
+extends template
+include mixins
 
 block topnavbar-left
-    +topnavbar('Site Info', leftList)
+    +topnavbar('Site Info', settings.leftList)
 
 block topnavbar-right
-    +topnavbar('Site Info', rightList)
+    +topnavbar('Site Info', settings.rightList)
 
 block dropdown
     +dropdown('Site Info')

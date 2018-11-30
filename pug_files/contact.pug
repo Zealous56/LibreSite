@@ -1,16 +1,17 @@
-extends layout.pug
+extends template
+include mixins
+
+block topnavbar-left
+    +topnavbar('Contact', settings.leftList)
+
+block topnavbar-right
+    +topnavbar('Contact', settings.rightList)
+
+block dropdown
+    +dropdown('Contact')
 
 block sidebar-body-left
     +sidebar-body('Table of Contents')
 
 block container-body
     +container-body()
-
-block topnavbar-left
-    +topnavbar('Contact', leftList)
-
-block topnavbar-right
-    +topnavbar('Contact', rightList)
-
-block dropdown
-    +dropdown('Contact')

@@ -1,11 +1,11 @@
 doctype html
-html(lang= language)
+html(lang= settings.language)
     head
         //- User configurable variables
-        title= title
-        meta(name='keywords', content= keywords)
-        meta(name='description', content= description)
-        meta(name='author', content=author)
+        title= settings.title
+        meta(name='keywords', content= settings.keywords)
+        meta(name='description', content= settings.description)
+        meta(name='author', content= settings.author)
 
         //- Constants
         meta(charset='utf-8')
@@ -18,7 +18,7 @@ html(lang= language)
                 block topnavbar-left
             .topnavbar-right
                 .dropdown
-                    a.dropbtn= dropdown
+                    a.dropbtn= settings.dropdown
                     block dropdown
                 block topnavbar-right
 
@@ -34,4 +34,4 @@ html(lang= language)
 
         .spacer &nbsp;
 
-        .footer= footer
+        .footer= settings.footer

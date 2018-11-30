@@ -3,7 +3,48 @@ const fs = require('fs')
 
 const pugFilesPath = 'pug_files/'
 const contentPath = 'content/'
-const pugFilesIgnore = ['layout.pug', 'mixins.pug', 'template.pug']
+const pugFilesIgnore = ['mixins.pug', 'template.pug']
+
+/* Website settings */
+const settings = {
+    
+    /* Meta tags */
+    title: 'Site title',
+    description: 'Site Description',
+    author: 'Author name',
+    keywords: 'site, keywords',
+    language: 'en-US',
+
+    /* Website text */
+    dropdown: 'Dropdown',
+    footer: 'Footer',
+    jumpText: 'Back to top of page',
+
+    /* Page mapping lists */
+    /* Left topnavbar links */
+    leftList: [
+        {
+            text: 'Home',
+            ref: 'index.html'
+        },
+        {
+            text: 'Blog',
+            ref: 'blog.html'
+        },
+        {
+            text: 'Contact',
+            ref: 'contact.html'
+        }
+    ],
+
+    /* Right topnavbar links */
+    rightList: [
+        {
+            text: 'Site Info',
+            ref: 'info.html'
+        }
+    ]
+}
 
 /* Get all files from pug files directory */
 var pageList = fs.readdirSync(pugFilesPath)
@@ -78,7 +119,7 @@ for(let i = 0; i < pageList.length; i++) {
     
     /* Compile each page to a file  */
     var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true })
-    fs.writeFileSync(page + '.html', compiledFunction({ container, sidebarTitle }))
+    fs.writeFileSync(page + '.html', compiledFunction({ container, sidebarTitle, settings }))
     
     console.log('Compilation of ' + page + ' successful!')
 }

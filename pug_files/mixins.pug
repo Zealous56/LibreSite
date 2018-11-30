@@ -11,7 +11,7 @@ mixin dropdown(curPage)
     .dropdown-content
         ul
             //- Remove first link from dropdown
-            - leftList = leftList.slice(1, leftList.length)
+            - var leftList = settings.leftList.slice(1, settings.leftList.length)
             
             //- Add left topnavbar items to dropdown
             each item in leftList
@@ -19,6 +19,8 @@ mixin dropdown(curPage)
                     a(href= item.ref)= item.text
 
             //- Add right topnavbar items to dropdown
+            - var rightList = settings.rightList
+
             each item in rightList
                 li
                     a(href= item.ref)= item.text
@@ -51,4 +53,4 @@ mixin container-body()
 
     //- Add jump to top link
     .jumptotop
-        a(href= '#top')= jumpText
+        a(href= '#top')= settings.jumpText
