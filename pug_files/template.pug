@@ -2,7 +2,7 @@ doctype html
 html(lang= settings.language)
     head
         //- User configurable variables
-        title= settings.title
+        title!= settings.title
         meta(name='keywords', content= settings.keywords)
         meta(name='description', content= settings.description)
         meta(name='author', content= settings.author)
@@ -18,7 +18,7 @@ html(lang= settings.language)
                 block topnavbar-left
             .topnavbar-right
                 .dropdown
-                    a.dropbtn= settings.dropdown
+                    a.dropbtn!= settings.dropdown
                     block dropdown
                 block topnavbar-right
 
@@ -34,4 +34,4 @@ html(lang= settings.language)
 
         .spacer &nbsp;
 
-        .footer= settings.footer
+        .footer!= settings.footer

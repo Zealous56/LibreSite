@@ -30,15 +30,15 @@ mixin sidebar-body(sidebarTitle)
     - var hrefIndex = 0;
     .sidebar-body
 
-        //- Print the header
-        h1= sidebarTitle
+        //- Print the title
+        h1!= sidebarTitle
 
         ul
 
             //- Print each link found in links array
             each link in container
                 li
-                    a(href= '#' + hrefIndex)= link.header
+                    a(href= '#' + hrefIndex)!= link.header
                 - hrefIndex++;
 
 mixin container-body()
@@ -47,10 +47,10 @@ mixin container-body()
     - var hrefIndex = 0;
     each post in container
         .post(id= hrefIndex)
-            h1= post.header
+            h1!= post.header
             p!= post.content
         - hrefIndex++;
 
     //- Add jump to top link
     .jumptotop
-        a(href= '#top')= settings.jumpText
+        a(href= '#top')!= settings.jumpText
