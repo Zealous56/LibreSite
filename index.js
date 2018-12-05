@@ -2,7 +2,9 @@ const pug = require('pug');
 const fs = require('fs');
 
 const pugFilesPath = 'pug_files/';
-const contentPath = 'content/';
+const htmlFilesPath = 'html_files/';
+const contentFilesPath = 'content/';
+
 const pugFilesIgnore = ['mixins.pug', 'template.pug'];
 
 /* Website settings */
@@ -63,7 +65,7 @@ for(var i = 0; i < pageList.length; i++) {
 /* Iterate through pageList array */
 for(let i = 0; i < pageList.length; i++) {
     let page = pageList[i];
-    let path = contentPath + page;
+    let path = contentFilesPath + page;
 
     /* Read all files in directory into an array */
     var files = fs.readdirSync(path);
@@ -118,8 +120,8 @@ for(let i = 0; i < pageList.length; i++) {
     container.sort(compare);
     
     /* Compile each page to a file  */
-    var compiledFunction = pug.compileFile('pug_files/' + page + '.pug', { pretty: true });
-    fs.writeFileSync(page + '.html', compiledFunction({ container, sidebarTitle, settings }));
+    var compiledFunction = pug.compileFile(pugFilesPath + page + '.pug', { pretty: true });
+    fs.writeFileSync(htmlFilesPath + page + '.html', compiledFunction({ container, sidebarTitle, settings }));
     
     console.log('Compilation of ' + page + ' successful!');
 }
