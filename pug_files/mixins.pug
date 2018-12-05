@@ -11,7 +11,7 @@ mixin dropdown(curPage)
     .dropdown-content
         ul
             //- Remove first link from dropdown
-            - var leftList = settings.leftList.slice(1, settings.leftList.length)
+            - var leftList = settings.leftList.slice(1, settings.leftList.length);
             
             //- Add left topnavbar items to dropdown
             each item in leftList
@@ -19,7 +19,7 @@ mixin dropdown(curPage)
                     a(href= item.ref)= item.text
 
             //- Add right topnavbar items to dropdown
-            - var rightList = settings.rightList
+            - var rightList = settings.rightList;
 
             each item in rightList
                 li
@@ -39,7 +39,7 @@ mixin sidebar-body(sidebarTitle)
             each link in container
                 li
                     a(href= '#' + hrefIndex)= link.header
-                - hrefIndex++
+                - hrefIndex++;
 
 mixin container-body()
 
@@ -49,7 +49,7 @@ mixin container-body()
         .post(id= hrefIndex)
             h1= post.header
             p!= post.content
-        - hrefIndex++
+        - hrefIndex++;
 
     //- Add jump to top link
     .jumptotop
