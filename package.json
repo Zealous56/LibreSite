@@ -1,7 +1,7 @@
 {
-  "name": "libresite",
+  "name": "site_name",
   "version": "1.0.0",
-  "description": "This is a template for my personal website. The idea is to create a decent looking FLOSS website compatible with many screen sizes.",
+  "description": "your site description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,16 +11,11 @@
     "url": "https://github.com/0Gitnick/LibreSite.git"
   },
   "keywords": [
-    "HTML",
-    "CSS",
-    "pug",
-    "node",
-    "website",
-    "FLOSS",
-    "free",
-    "libre"
+    "your",
+    "site",
+    "description"
   ],
-  "author": "0Gitnick",
+  "author": "your_name",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/0Gitnick/LibreSite/issues"
