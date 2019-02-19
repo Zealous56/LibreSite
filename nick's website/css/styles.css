@@ -1,0 +1,181 @@
+/* Reset css */
+a, a:hover, a:visited, a:active { color: inherit; }
+body { margin: 0; }
+
+/* Define Roboto fonts */
+
+
+body {
+    color: #000;
+    font-family: 'LibreMono', monospace;
+    background: url('../res/background.jpg') no-repeat center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+/* Header color is blue & different font */
+h1, h2, h3, h4, h5, h6 {
+    color: #B87614;
+border-bottom: 2px solid;
+}
+h1{
+ text-align: center;
+}
+
+/* Make space between body and the title bar */
+.spacer {
+    width: 100%;
+    height: 3.5em;
+}
+
+.container {
+
+    /* Padding between main body and navbar/footer */
+    padding: 2em;
+}
+
+.container-body, .sidebar-body {
+    padding: 1em 1.5em;
+    border: double 0.2em;
+    background-color: #fff;
+}
+
+.post, .jumptotop {
+
+    /* Padding between posts */
+    padding-bottom: 1em;
+}
+
+.post p {
+    line-height: 1.7em;
+}
+
+.sidebar-body, .jumptotop {
+    text-align: center;
+}
+
+/* Style list */
+.sidebar-body ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.sidebar-body ul li {
+
+    /* Padding between list elements */
+	padding-bottom: 1em;
+}
+
+/* Set navbar style */
+.topnavbar {
+    background-color: #FB9902;
+    position: fixed;
+    width: 100%;
+}
+
+/* Style the links inside the navbar */
+.topnavbar a, .footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    padding: 0.6em 0.8em;
+    text-decoration: none;
+}
+
+.topnavbar-left a {
+    float: left;
+}
+
+.topnavbar-right a {
+    float: right;
+}
+
+/* Hide left text except home */
+.topnavbar-left a:not(:first-child) {
+    display: none;
+}
+
+/* Hide text except for dropdown */
+.topnavbar-right > a {
+    display: none;
+}
+
+/* Display dropbtn for small screen */
+.dropbtn {
+    display: block;
+}
+
+.dropdown-content {
+
+    /* dropdown-content is relative to topnavbar */
+    position: absolute;
+    top: 3.5em;
+    right: 0;
+
+    /* Don't display dropdown content by default */
+    display: none;
+}
+
+.dropdown-content ul {
+    overflow: hidden;
+    background-color: #00C2Cf;
+
+    /* Add shadow to dropdown box */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    /* Remove default list style */
+    display: table-cell;
+    list-style: none;
+}
+
+.dropdown-content ul li a {
+    width: 100%;
+    text-align: center;
+}
+
+/* Display dropdown content on hover */
+.dropbtn:hover ~ .dropdown-content, .dropdown-content:hover {
+    display: block;
+}
+
+/* Embolden topnavbar links when hovered over */
+.topnavbar a:hover {
+    font-weight: bold;
+    background-color: #B87614;
+}
+
+/* Style the footer */
+.footer {
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Change link color on active */
+.topnavbar a.active {
+    background-color: #B87614;
+}
+
+/* Show all 3 columns for large screens */
+@media only screen and (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-column-gap: 2em;
+    }
+}
+
+/* Show navbar buttons for large screens */
+@media only screen and (min-width: 576px) {
+    .topnavbar-left a:not(:first-child) {
+        display: block;
+    }
+
+    .topnavbar-right > a {
+        display: block;
+    }
+
+    .dropbtn {
+        display: none;
+    }
+}
