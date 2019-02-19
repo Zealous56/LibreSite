@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Nicholas Johnson - SIUE</title>
+    <meta name="keywords" content="Nicholas Johnson, SIUE, GNU/Linux, FOSS, security, privacy, portfolio">
+    <meta name="description" content="Personal portfolio and blog space for Nicholas Johnson of Southern Illinois University Edwardsville">
+    <meta name="author" content="Nicholas Johnson">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <div class="topnavbar">
+      <div class="topnavbar-left"><a class="active" href="index.html">Home</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="topnavbar-right">
+        <div class="dropdown"><a class="dropbtn">More</a>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="info.html">Site Info</a></li>
+            </ul>
+          </div>
+        </div><a href="info.html">Site Info</a>
+      </div>
+    </div>
+    <div class="spacer">&nbsp;</div>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-body">
+          <h1>Table of Contents</h1>
+          <ul>
+            <li><a href="#0">Welcome!</a></li>
+            <li><a href="#1">Bolte</a></li>
+            <li><a href="#2">LibreSite</a></li>
+            <li><a href="#3">Numbers-to-Words</a></li>
+            <li><a href="#4">Sorting-Algorithms</a></li>
+            <li><a href="#5">Diceware-GUI</a></li>
+            <li><a href="#6">RomanNumeral</a></li>
+            <li><a href="#7">Rational</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-body">
+        <div class="post" id="0">
+          <h1>Welcome!</h1>
+          <p>Greetings netizen! You have reached Nicholas Johnson's Personal webpage hosted by Southern Illinois University
+Edwardsville!
+<br/>
+<br/>
+Before you continue, you should check that you are using the HTTPS protocol to connect to this website. My university
+does not enforce a secure connection to their domain, so please check that the URL at the top of your browser reads
+"<a href="https://www.siue.edu/~njohnag">https://www.siue.edu/~njohnag</a>" and not "www.siue.edu/~njohnag". If you
+don't check for this, you may be receiving a spoofed website.
+<br/>
+<br/>
+Below, you will find links to my projects and a description and my motivations for each one. In my blog page, I share
+anything on my mind sticking to the general theme of computing. Approved methods of contact can be found on my contact
+page. Enjoy!</p>
+        </div>
+        <div class="post" id="1">
+          <h1>Bolte</h1>
+          <p>The Bitcoin network has been around for nearly a decade now. Over the past few years, I have been following recent
+developments in distributed ledger technology. I decided it's time I write my own blockchain to better understand it,
+programatically speaking. <a href="https://github.com/0Gitnick/Bolte" target=_blank>Bolte</a> is more a demo how
+blockchain technology works than a real implementation. As you can see in the
+<a href="https://github.com/0Gitnick/Bolte/blob/master/TODO.txt" target=_blank>TODO</a>, there are many aspects of
+blockchain that I would eventually like to program. I plan on extending this project at a later date, but for now I
+will postpone further development as I have hit a roadblock. I need more practice in Python and in building
+multifaceted, networked applications.
+<br/>
+<br/>
+I am happy to have accomplished a basic demo in a language I have had only a few days practice using. In Bolte, you can
+see examples of the structure of blockchain and blocks, transactions (without digital signatures), proof of work, and
+state in <a href="https://github.com/0Gitnick/Bolte/blob/master/blockchain.py" target=_blank>blockchain.py</a>.
+Validation examples are in a separate module named <a href="https://github.com/0Gitnick/Bolte/blob/master/validator.py"
+target=_blank>validator.py</a>.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="2">
+          <h1>LibreSite</h1>
+          <p>What is LibreSite? You're looking at it! Well, sort of. LibreSite is the template for the site you are looking at. I
+wrote it myself. So in a way, there is a recursion since you are reading about the site template on the site itself.
+I wrote LibreSite for gaining experience with HTML and CSS. A central goal was also to create a website that respects
+the user visiting it. For example, not requiring the user to run foreign Javascript on their computer just to view the
+site. Also, by respecting the privacy of the user by downloading custom fonts locally instead of from Google Fonts.
+This way, Google isn't necessarily alerted who is visiting my site and when. And finally, I have made
+<a href="https://github.com/0gitnick/LibreSite" target=_blank>the code</a> for generating the template to this site
+freely available for anyone to run, copy, modify, and share.
+<br>
+<br>
+As we were learning pug in databases and web design class, I decided I would write LibreSite using it. I also used
+Node.js to compile the pug. All of this worked out well. What did not work out so well was trying to write my own CSS
+stylesheet. Lesson learned. I will never try that again. Spending hours debugging and trying to make a flexible layout
+is not worth the time. There are stylesheets online that take care of all that for you such as
+<a href="https://www.w3schools.com/w3css/" target=_blank>w3css from w3schools</a>. Another thing that could be improved
+right now is the flexibility of the layout, meaning more options for easy user styling, as well as a less hacky content
+management system, which currently just reads from text files. Overall, I learned a lot and I'm still proud of what
+I've accomplished.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="3">
+          <h1>Numbers-to-Words</h1>
+          <p>The project is self-explanatory. It converts numbers into words. For example, 65 becomes "sixty five". The algorithm
+was not copied. I thought it up on my own although I'm positive it's unoriginal. It was my first experience in both
+inventing an algorithm and then putting it into code. If you look at the
+<a href="https://github.com/0Gitnick/Numbers-to-Words/commit/3579d3d5aabd803d2ddc4a7550463aea7d688e84" target=_blank>
+first commit</a>, you will notice how awful the code structure is. It even makes me want to cringe looking back on it!
+That code came from an old project written years ago that I wrote but never released. I committed the initial code to
+show from where I started, rather than rewriting the algorithm from scratch. It had many problems. Nearly all of the
+first 81 lines are unnecessary variable declarations. On line 144, there is a for loop that executed 3 times more often
+than needed. Lines 150-152 are try/catch blocks where the exception is immediately caught to prevent an
+arrayIndexOutOfBoundsException which should not happen. On top of that there is a reverseString() function which can
+be thrown out entirely. The variable declarations at the beginning also have meaningless names. The variables later
+create a problem that cascades down the rest of the program forcing parts of the code to be up to forty times longer
+than <a href="https://github.com/0Gitnick/Numbers-to-Words/blob/master/src/edu/siue/njohnag/NumbersToWords.java"
+target=_blank>the optimized version</a> I finished.
+<br/>
+<br/>
+The project has <a href="https://github.com/0Gitnick/Numbers-to-Words/blob/master/src/edu/siue/njohnag/Testbench.java"
+target=_blank>thorough unit testing</a> which actually helped me uncover bugs. In the optimized algorithm, I removed
+the excessive variables, fixed the loop, and replaced the try/catches.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="4">
+          <h1>Sorting-Algorithms</h1>
+          <p>Simple sorting algorithms in C++. All my previous work was in Java, so I thought it was time to change things up. Most
+all <a href="https://github.com/0Gitnick/Sorting-Algorithms/tree/master/edu.siue.njohnag/algorithms" target=_blank>the
+sorting algorithms</a> I wrote need to swap two elements in an array. So there is a
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/swap.cpp"
+target=_blank>swap.cpp file</a> separated from the rest of the cpp files that execute the algorithms. The
+implementations are not my own. This project was an exercise in learning the algorithm by writing it, not inventing my
+own implementation.
+<br/>
+<br/>
+My favorite algorithms are recursive. Unfortunately recursion is memory inefficient and is often replaced in industry
+code by loop structures for that reason. My all time favorite is
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/quicksort.cpp"
+target=_blank>quicksort</a> for its simplicity and flexibility. Because you are free to choose any pivot point, you can
+optimize quicksort to suit your dataset.
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/insertionsort.cpp"
+target=_blank>Insertion</a> and
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/selectionsort.cpp"
+target=_blank>selection sort</a> are very similar.
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/bubblesort.cpp"
+target=_blank>Bubble sort</a> is interesting since its swapping is more dynamic.
+<a href="https://github.com/0Gitnick/Sorting-Algorithms/blob/master/edu.siue.njohnag/algorithms/radixsort.cpp"
+target=_blank>Radix sort</a> was my least favorite algorithm. I found it unintuitive and boring to program. Although I
+can't argue with the efficiency and might use it in a future project.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="5">
+          <h1>Diceware-GUI</h1>
+          <p>I can't code just to code. I must have an end goal in mind and a strong purpose helps. For
+<a href="https://github.com/0Gitnick/Diceware-GUI" target=_blank>Diceware-GUI</a>, the purpose was simply to create a
+graphical interface for the <a href="http://world.std.com/~reinhold/diceware.html" target=_blank>Diceware method of
+generating passwords</a>. For those who don't know, Diceware was concocted by Arnold G. Reinhold. It is a method for
+generating secure, memorable passwords. Why not just use a
+<a href="https://www.techopedia.com/definition/31435/password-manager" target=_blank> password manager</a>? There are
+certain scenarios where password managers are inappropriate. For example, what will the password to your password
+manager be? Generating a secure password for your manager and writing it down to remember it is no good. Someone may
+find it. Trying to remember it is impractical since it's a bunch of scrambled generated characters. What do you do?
+That's where Diceware comes in.
+<br/>
+<br/>
+Simply roll some die as your source of randomness and match them with the numbers on the Diceware list. There is a
+one-to-one mapping from each number to a unique word. Generate enough words and concatenate them into one password, and
+lo and behold, you have a secure password. And more importantly, with a little effort, you can remember the password.
+Because what good is having a password you can't remember?
+<br/>
+<br/>
+I would caution you not to make your own word list, since the letter frequency of the list is important. The lists
+found on the Diceware website have been crafted to be secure. They are available in many languages and I highly
+recommend reading through the <a href="http://world.std.com/%7Ereinhold/diceware.html" target=_blank>original Diceware
+website</a> for more detailed information.
+<br/>
+<br/>
+My program is fairly simple. It uses a basic GUI and some regex magic to read out all the lists of any language. The
+Java SecureRandom class is utilized for generating random numbers. While a useful tool, I would still highly recommend
+generating passwords by hand with <a href="http://world.std.com/%7Ereinhold/dicewarefaq.html#casino" target=_blank>
+casino grade dice</a> for added security, since your passphrase is only as secure as the source of randomness. If you
+use my program to generate passwords, keep in mind that the password is only as secure as the computer you generate
+them on. Also, my program is not thoroughly tested or audited by a third party, and I did not unit test it. So I would
+avoid using it for serious security purposes. I wouldn't rely on anyone else's programs for Diceware either unless they
+had been security audited. The best way to avoid this problem is to just use real dice.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="6">
+          <h1>RomanNumeral</h1>
+          <p><a href="https://github.com/0Gitnick/RomanNumeral" target=_blank>Roman Numeral</a> was my first practice in creating a
+pure function Java class. It has exception handling and uses abstract. It can convert an integer into a roman numeral
+string using toRoman() or roman numeral strings to integers using toRoman(). Also, it is well-documented. Rather than
+not writing enough comments, I have the opposite tendency. I tend to over comment my code. In this project, there is
+so little code and so much documentation, it seems like 40% of the program is just documentation.</p>
+        </div>
+          <div class="jumptotop"><a href="#top">Jump to top</a></div>
+        <div class="post" id="7">
+          <h1>Rational</h1>
+          <p>My first project. I learned to use Github and make commits. There is a
+<a href="https://github.com/0Gitnick/Rational/blob/master/src/edu/siue/njohnag/Fraction.java" target=_blank>class for
+integer primitives</a>. There is also a
+<a href="https://github.com/0Gitnick/Rational/blob/master/src/edu/siue/njohnag/BigFraction.java" target=_blank>class
+that supports BigInteger</a>. Both classes are well documented. I also unit tested them in
+<a href="https://github.com/0Gitnick/Rational/blob/master/src/edu/siue/njohnag/FracTest.java" target=_blank>
+FracTest.java</a>. The rational objects are internally represented as a numerator and denominator. Representing the
+rational object as a float or double would be unworkable for several reasons. Rationals are operated on much the same
+way you would do the operations by hand, so reading the classes' code should be intuitive if you know basic Java and
+are familiar with rational numbers.</p>
+        </div>
+        <div class="jumptotop"><a href="#top">Jump to top</a></div>
+      </div>
+      <div class="sidebar">
+      </div>
+    </div>
+    <div class="spacer">&nbsp;</div>
+    <div class="footer"><a href="https://creativecommons.org/licenses/by-nd/3.0/" target=_blank> Copyright &copy; 2018 Nicholas Johnson.</a></div>
+  </body>
+</html>
